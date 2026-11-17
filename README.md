@@ -1,13 +1,8 @@
-# StreamPulse App (Alternativa optimizada)
+# StreamPulse & Yailen App (Alternativa Gratuita Avanzada)
 
-Esta aplicación web moderna e interactiva está diseñada como una alternativa gratuita y de alto rendimiento, lista para desplegarse en GitHub Pages, Netlify o Vercel.
+Aplicación web móvil estilo app nativa (PWA) inspirada en Mangoreel, optimizada y personalizada con el asistente virtual **Yailen** (personaje 3D de Wanketeros MEQUE KIDS).
 
-## 🚀 Cómo subir a GitHub
-
-1. Descarga y descomprime este archivo ZIP.
-2. Crea un nuevo repositorio en [GitHub](https://github.com/new).
-3. Sube todos los archivos (`index.html`, `styles.css`, `app.js`, `manifest.webmanifest`, `README.md`) al repositorio.
-4. Ve a **Settings > Pages** en tu repositorio de GitHub, selecciona la rama `main` y guarda los cambios. ¡Tu app estará online en segundos!
-
-## 💰 Monetización
-Puedes integrar banners de Adsterra, Monetag o Google AdSense en la sección de servicios o banners publicitarios para generar ingresos por cada visita.
+## 🚀 Despliegue en GitHub Pages
+1. Sube todos los archivos de esta carpeta a un nuevo repositorio en GitHub.
+2. Ve a **Settings > Pages** y selecciona la rama `main`.
+3. ¡Tu app estará online con HTTPS y lista para monetizar con Adsterra o Monetag!

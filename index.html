@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>StreamPulse - Entretenimiento y Cortos</title>
+    <title>StreamPulse & Yailen - Entretenimiento y Contenido con IA</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,7 +15,7 @@
         <header class="app-header">
             <div class="header-title">
                 <h1>StreamPulse</h1>
-                <span class="badge-vip">PRO</span>
+                <span class="badge-vip">PRO • Yailen AI</span>
             </div>
             <div class="header-icons">
                 <button aria-label="Notificaciones"><i class="fa-regular fa-bell"></i></button>
@@ -23,110 +23,235 @@
             </div>
         </header>
 
-        <!-- Main Content Area -->
+        <!-- Views Container -->
         <main class="app-body">
-            <!-- Profile / Yailen Assistant Card -->
-            <section class="profile-card">
-                <div class="avatar-container">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" alt="Yailen Avatar" class="profile-avatar">
-                    <span class="status-dot"></span>
-                </div>
-                <div class="profile-info">
-                    <div class="profile-line">
-                        <span class="profile-name">Yailen (Asistente)</span>
-                        <span class="profile-badge-tag">¡Hola! 🌟</span>
+            <!-- VIEW: INICIO -->
+            <div id="view-inicio" class="app-view active">
+                <!-- Yailen Assistant Banner -->
+                <section class="yailen-banner">
+                    <div class="yailen-avatar-wrap">
+                        <img src="assets/yailen.png" alt="Yailen 3D" class="yailen-avatar" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'">
+                        <span class="pulse-dot"></span>
                     </div>
-                    <span class="profile-uid">UID 5887807054 • Wanketeros MEQUE KIDS</span>
-                </div>
-                <button class="eye-btn" aria-label="Ver detalles"><i class="fa-regular fa-eye"></i></button>
-            </section>
+                    <div class="yailen-speech">
+                        <div class="speech-bubble">
+                            ¡Hola amiguitos! Soy <strong>Yailen</strong>, tu guía de 4 años en Wanketeros MEQUE KIDS. ¡Vamos a crear videos increíbles y ganar Dharmas y USDT juntos! 🌟
+                        </div>
+                    </div>
+                </section>
 
-            <!-- Earnings Card -->
-            <button class="profit-banner" onclick="alert('Billetera abierta con éxito')">
-                <div class="profit-left">
-                    <i class="fa-solid fa-wallet"></i>
-                    <span>Ganancia de hoy</span>
-                </div>
-                <span class="profit-value">1.214 USDT <i class="fa-solid fa-chevron-right"></i></span>
-            </button>
+                <!-- Earnings Card -->
+                <button class="profit-banner" onclick="switchTab('perfil')">
+                    <div class="profit-left">
+                        <i class="fa-solid fa-wallet"></i>
+                        <span>Ganancia de hoy</span>
+                    </div>
+                    <span class="profit-value">1.214 USDT <i class="fa-solid fa-chevron-right"></i></span>
+                </button>
 
-            <!-- Stats Grid -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <i class="fa-solid fa-clapperboard stat-icon"></i>
-                    <div class="stat-text">
-                        <span class="stat-label">Mis dramas</span>
-                        <span class="stat-count">0 <em>Elementos</em></span>
+                <!-- Featured Banner -->
+                <div class="promo-slider">
+                    <div class="promo-card">
+                        <h3>Plataforma Global de Microdramas & IA</h3>
+                        <p>Genera contenido animado en 16:9 y 9:16 con flujos automatizados de alta calidad.</p>
                     </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-text">
-                        <span class="stat-label">Mis favoritos</span>
-                        <span class="stat-count">0 <em>Elementos</em></span>
+
+                <!-- Popular Dramas Grid -->
+                <section class="section-block">
+                    <div class="section-header-row">
+                        <h2 class="section-title">Popular 🔥</h2>
+                        <span class="see-more">Ver todo</span>
                     </div>
-                    <i class="fa-solid fa-heart stat-icon pink"></i>
+                    <div class="drama-grid">
+                        <div class="drama-item">
+                            <div class="drama-poster" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=300');">
+                                <span class="episode-badge">42 episodios</span>
+                            </div>
+                            <div class="drama-info">
+                                <h4>The Professor's Forbidden Protégée</h4>
+                                <p>Selena descubre magia oculta en el Bosque Oscuro con Sebastian.</p>
+                            </div>
+                        </div>
+                        <div class="drama-item">
+                            <div class="drama-poster" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300');">
+                                <span class="episode-badge">62 episodios</span>
+                            </div>
+                            <div class="drama-info">
+                                <h4>Casada con el Hombre de mis Sueños</h4>
+                                <p>Jimena recupera su brillo tras una amnesia traumática.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- VIEW: MATERIALES -->
+            <div id="view-materiales" class="app-view">
+                <div class="view-header-flex">
+                    <h2>Materiales</h2>
+                    <button class="history-btn">Historial de compras <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="tip-banner">
+                    <i class="fa-solid fa-lightbulb"></i> Puedes comprar varios paquetes de material a la vez
+                </div>
+                <div class="materials-list">
+                    <div class="material-card-item">
+                        <div class="mat-poster"><span>6 episodios</span></div>
+                        <div class="mat-details">
+                            <div class="mat-title-row">
+                                <h3>Guion de Reserva</h3>
+                                <span class="mat-more">Más <i class="fa-solid fa-chevron-right"></i></span>
+                            </div>
+                            <p><i class="fa-solid fa-file-contract"></i> Contrato: 3 días</p>
+                            <p><i class="fa-solid fa-clapperboard"></i> Clips diarios: 3</p>
+                            <p><i class="fa-solid fa-chart-line"></i> Ingreso diario: <strong class="accent">0.9-1.8 USDT</strong></p>
+                            <div class="mat-tags">
+                                <span class="tag">Recortar</span><span class="tag">Duración</span><span class="tag">Pack Boost</span>
+                            </div>
+                            <button class="mat-action-btn sold-out" disabled>Límite alcanzado</button>
+                        </div>
+                    </div>
+
+                    <div class="material-card-item">
+                        <div class="mat-poster"><span>60 episodios</span></div>
+                        <div class="mat-details">
+                            <div class="mat-title-row">
+                                <h3>Guion por Tiempo Limitado</h3>
+                                <span class="mat-more">Más <i class="fa-solid fa-chevron-right"></i></span>
+                            </div>
+                            <p><i class="fa-solid fa-file-contract"></i> Contrato: 60 días</p>
+                            <p><i class="fa-solid fa-clapperboard"></i> Clips diarios: 1</p>
+                            <p><i class="fa-solid fa-chart-line"></i> Ingreso diario: <strong class="accent">0.4-0.8 USDT</strong></p>
+                            <div class="mat-tags">
+                                <span class="tag">Duración</span><span class="tag">Recortar</span>
+                            </div>
+                            <button class="mat-action-btn buy" onclick="alert('¡Compra iniciada con éxito!')">32 USDT Comprar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Wallets Section -->
-            <section class="section-block">
-                <h2 class="section-title">Billetera</h2>
-                
-                <div class="wallet-item">
-                    <div class="wallet-header">
-                        <span>Billetera de ganancias</span>
-                        <span class="wallet-time">Lun-Dom 09:00-21:00</span>
-                    </div>
-                    <div class="wallet-body">
-                        <div class="wallet-amount-box">
-                            <i class="fa-solid fa-coins crypto-icon"></i>
-                            <div>
-                                <div class="amount">1.214 USDT</div>
-                                <div class="sub">Disponible para retiro</div>
+            <!-- VIEW: INVERTIR -->
+            <div id="view-invertir" class="app-view">
+                <div class="view-header-flex">
+                    <h2>Inversión Contenido IA</h2>
+                    <button class="history-btn">Registros <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="investment-list">
+                    <div class="invest-card">
+                        <div class="invest-top">
+                            <div class="invest-cover" style="background: linear-gradient(135deg, #0F766E, #14B8A6);">
+                                <span>El Maíz Sagrado Contra el Imperio Digital</span>
+                            </div>
+                            <div class="invest-body">
+                                <h3>El Maíz Sagrado Contra el Imperio Digital</h3>
+                                <span class="maturity-badge">Vencimiento</span>
+                                <ul class="invest-facts">
+                                    <li><span>Rendimiento diario:</span> <strong class="accent">0.1% ~ 0.4%/día</strong></li>
+                                    <li><span>Plazo:</span> 8 ~ 21 días</li>
+                                    <li><span>Límite de inversión:</span> 10 ~ 400 USDT</li>
+                                </ul>
                             </div>
                         </div>
-                        <button class="action-btn primary" onclick="alert('Retiro solicitado')">Retirar</button>
+                        <div class="invest-actions">
+                            <button class="btn-detail">Detalles</button>
+                            <button class="btn-buy-blocked">Aún no puedes comprar.</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW: PERFIL -->
+            <div id="view-perfil" class="app-view">
+                <div class="profile-header-top">
+                    <h2>Yo</h2>
+                    <div class="profile-actions-top">
+                        <button aria-label="Notificaciones"><i class="fa-regular fa-bell"></i></button>
+                        <button aria-label="Ajustes"><i class="fa-solid fa-gear"></i></button>
                     </div>
                 </div>
 
-                <div class="wallet-item">
-                    <div class="wallet-header">
-                        <span>Billetera de recompensas</span>
+                <div class="profile-user-card">
+                    <div class="user-avatar-wrap">
+                        <span class="avatar-letter">U</span>
+                        <img src="assets/yailen.png" alt="Badge" class="user-badge-icon" onerror="this.style.display='none'">
                     </div>
-                    <div class="wallet-body">
-                        <div class="wallet-amount-box">
-                            <i class="fa-solid fa-gift crypto-icon"></i>
-                            <div>
-                                <div class="amount">0.000 USDT</div>
-                                <div class="sub">Bonos activos</div>
-                            </div>
+                    <div class="user-meta">
+                        <div class="user-name-row">
+                            <span class="username">Wyler Noriega (User2a31c76b)</span>
+                            <span class="vip-tag">VIP</span>
                         </div>
-                        <button class="action-btn secondary" onclick="alert('Función no disponible')">Retirar</button>
+                        <div class="uid-row">
+                            <span>UID 5887807054</span>
+                            <button class="copy-btn" onclick="alert('UID copiado al portapapeles')"><i class="fa-regular fa-copy"></i></button>
+                        </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- Services Grid -->
-            <section class="section-block">
-                <h2 class="section-title">Servicios</h2>
-                <div class="services-grid">
-                    <button class="service-chip"><i class="fa-solid fa-bullhorn"></i><span>Anuncios</span><i class="fa-solid fa-chevron-right chevron"></i></button>
-                    <button class="service-chip"><i class="fa-solid fa-user-plus"></i><span>Invitar amigos</span><i class="fa-solid fa-chevron-right chevron"></i></button>
-                    <button class="service-chip"><i class="fa-solid fa-chart-line"></i><span>Ganancias del equipo</span><i class="fa-solid fa-chevron-right chevron"></i></button>
-                    <button class="service-chip"><i class="fa-solid fa-ticket"></i><span>Centro de canje</span><i class="fa-solid fa-chevron-right chevron"></i></button>
-                    <button class="service-chip"><i class="fa-solid fa-rocket"></i><span>Centro de campañas</span><i class="fa-solid fa-chevron-right chevron"></i></button>
-                    <button class="service-chip"><i class="fa-solid fa-download"></i><span>Descargar App</span><i class="fa-solid fa-chevron-right chevron"></i></button>
+                <div class="profile-stats-row">
+                    <div class="p-stat">
+                        <i class="fa-solid fa-clapperboard"></i>
+                        <div>
+                            <span class="label">Mis dramas</span>
+                            <span class="val">0 <em>Elementos</em></span>
+                        </div>
+                    </div>
+                    <div class="p-stat">
+                        <i class="fa-solid fa-heart pink"></i>
+                        <div>
+                            <span class="label">Mis favoritos</span>
+                            <span class="val">0 <em>Elementos</em></span>
+                        </div>
+                    </div>
                 </div>
-            </section>
+
+                <!-- Wallets -->
+                <div class="wallet-section">
+                    <h3>Billetera</h3>
+                    <div class="wallet-box">
+                        <div class="w-top">
+                            <span>Billetera de ganancias</span>
+                            <span class="w-time">Lun-Dom 09:00-21:00 UTC-4</span>
+                        </div>
+                        <div class="w-content">
+                            <div>
+                                <div class="w-amount">1.214 USDT</div>
+                                <div class="w-sub">Disponible</div>
+                            </div>
+                            <button class="w-btn primary" onclick="alert('Retiro procesado')">Retirar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="services-section">
+                    <h3>Servicios</h3>
+                    <div class="service-list">
+                        <button class="service-item"><i class="fa-solid fa-bullhorn"></i><span>Anuncios</span><i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="service-item"><i class="fa-solid fa-user-plus"></i><span>Invitar amigos</span><i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="service-item"><i class="fa-solid fa-chart-pie"></i><span>Ganancias del equipo</span><i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="service-item"><i class="fa-solid fa-ticket"></i><span>Centro de canje</span><i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="service-item"><i class="fa-solid fa-cloud-arrow-down"></i><span>Descargar App (PWA)</span><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <!-- Bottom Navigation -->
         <nav class="bottom-nav">
-            <a href="#" class="nav-tab active"><i class="fa-solid fa-house"></i><span>Inicio</span></a>
-            <a href="#" class="nav-tab"><i class="fa-solid fa-compass"></i><span>Explorar</span></a>
-            <a href="#" class="nav-tab"><i class="fa-solid fa-clapperboard"></i><span>Clips</span></a>
-            <a href="#" class="nav-tab"><i class="fa-solid fa-wallet"></i><span>Invertir</span></a>
-            <a href="#" class="nav-tab"><i class="fa-solid fa-user"></i><span>Perfil</span><span class="dot"></span></a>
+            <button class="nav-tab active" onclick="switchTab('inicio')">
+                <i class="fa-solid fa-house"></i><span>Inicio</span>
+            </button>
+            <button class="nav-tab" onclick="switchTab('materiales')">
+                <i class="fa-solid fa-boxes-stacked"></i><span>Materiales</span>
+            </button>
+            <button class="nav-tab" onclick="switchTab('invertir')">
+                <i class="fa-solid fa-chart-line"></i><span>Invertir</span>
+            </button>
+            <button class="nav-tab" onclick="switchTab('perfil')">
+                <i class="fa-solid fa-user"></i><span>Perfil</span><span class="dot"></span>
+            </button>
         </nav>
     </div>
     <script src="app.js"></script>
