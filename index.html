@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Streampulse - Yailen Kids Studio & AutoReels</title>
+    <title>Streampulse - Studio & Reproductor de Reels</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,14 +18,14 @@
                 <span class="badge-vip">Yailen AI PRO</span>
             </div>
             <div class="header-icons">
-                <button aria-label="Notificaciones"><i class="fa-regular fa-bell"></i></button>
-                <button aria-label="Configuración"><i class="fa-solid fa-gear"></i></button>
+                <button aria-label="Notificaciones" onclick="alert('Sin notificaciones nuevas')"><i class="fa-regular fa-bell"></i></button>
+                <button aria-label="Configuración" onclick="switchTab('perfil')"><i class="fa-solid fa-gear"></i></button>
             </div>
         </header>
 
         <!-- Views Container -->
         <main class="app-body">
-            <!-- VIEW: REELS / INICIO -->
+            <!-- VIEW: REELS / INICIO & REPRODUCTOR -->
             <div id="view-inicio" class="app-view active">
                 <!-- Yailen Assistant Banner -->
                 <section class="yailen-banner">
@@ -35,7 +35,7 @@
                     </div>
                     <div class="yailen-speech">
                         <div class="speech-bubble">
-                            ¡Hola! Soy <strong>Yailen</strong> (4 años). Aquí organizamos los capítulos de <em>APRENDE CON YAILEN</em> y <em>Wanketeros MEQUE KIDS</em>. ¡Cada capítulo terminado se paga en USDT/COP! 🌟
+                            ¡Hola! Soy <strong>Yailen</strong> (4 años). Gestiona tus capítulos de <em>APRENDE CON YAILEN</em> y reproduce los reels en formato vertical y horizontal. 🌟
                         </div>
                     </div>
                 </section>
@@ -67,10 +67,28 @@
                     </div>
                 </div>
 
+                <!-- Video Player Simulator Section -->
+                <section class="section-block">
+                    <div class="section-header-row">
+                        <h2 class="section-title">Reproductor de Reels 🎬</h2>
+                        <span class="see-more" onclick="openPlayerModal()">Ver Episodios</span>
+                    </div>
+                    <div class="video-preview-card" onclick="openPlayerModal()">
+                        <div class="video-thumb-bg" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500');">
+                            <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                            <span class="badge-format">Episodio 01 • 1:23</span>
+                        </div>
+                        <div class="video-meta-info">
+                            <h3>The Professor's Forbidden Protégée</h3>
+                            <p>Reproducción fluida 9:16 con paginador de episodios y subtítulos automáticos.</p>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Active Projects List -->
                 <section class="section-block">
                     <div class="section-header-row">
-                        <h2 class="section-title">Reels & Capítulos Activos 🎬</h2>
+                        <h2 class="section-title">Capítulos Activos</h2>
                         <span class="see-more" onclick="alert('Iniciando renderizado IA automático...')">+ Nuevo Reel</span>
                     </div>
                     <div class="projects-list">
@@ -182,7 +200,7 @@
                     </div>
                 </div>
 
-                <!-- Wallet & Bank Card Binding (Nequi / Colombia COP) -->
+                <!-- Wallet & Bank Card Binding -->
                 <div class="wallet-section">
                     <h3>Billetera de Ingresos por Capítulos</h3>
                     <div class="wallet-box">
@@ -234,6 +252,33 @@
             </button>
         </nav>
     </div>
+
+    <!-- Video Player Modal -->
+    <div id="playerModal" class="player-modal">
+        <div class="player-modal-content">
+            <div class="player-top-bar">
+                <button onclick="closePlayerModal()"><i class="fa-solid fa-arrow-left"></i></button>
+                <span>The Professor's Forbidden Protégée</span>
+            </div>
+            <div class="player-video-container">
+                <video id="sampleVideo" controls autoplay playsinline src="https://a3-a4-zs.oss-us-west-1.aliyuncs.com/app/uploads/2026/09/12/01a0940b-80ab-7202-aad3-3e687758810f.mp4"></video>
+            </div>
+            <div class="episodes-selector-bar">
+                <h4>Seleccionar Episodio</h4>
+                <div class="episodes-chips-grid">
+                    <button class="ep-chip active" onclick="selectEp(1)">1</button>
+                    <button class="ep-chip" onclick="selectEp(2)">2</button>
+                    <button class="ep-chip" onclick="selectEp(3)">3</button>
+                    <button class="ep-chip" onclick="selectEp(4)">4</button>
+                    <button class="ep-chip" onclick="selectEp(5)">5</button>
+                    <button class="ep-chip" onclick="selectEp(6)">6</button>
+                    <button class="ep-chip" onclick="selectEp(7)">7</button>
+                    <button class="ep-chip" onclick="selectEp(8)">8</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
