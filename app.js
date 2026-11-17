@@ -6,8 +6,7 @@ function switchTab(tabId) {
     const targetView = document.getElementById('view-' + tabId);
     if (targetView) targetView.classList.add('active');
     
-    // Find matching tab button
     event && event.currentTarget && event.currentTarget.classList.add('active');
 }
 
-console.log("StreamPulse with Yailen AI Loaded Successfully!");
+console.log("Yailen Kids Studio Initialized!");
