@@ -1,9 +1,9 @@
 {
-  "name": "Yailen Kids Studio",
-  "short_name": "YailenStudio",
+  "name": "Streampulse",
+  "short_name": "Streampulse",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0F172A",
-  "theme_color": "#14B8A6",
+  "background_color": "#000000",
+  "theme_color": "#FF8C00",
   "icons": []
 }

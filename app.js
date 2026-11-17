@@ -9,4 +9,8 @@ function switchTab(tabId) {
     event && event.currentTarget && event.currentTarget.classList.add('active');
 }
 
-console.log("Yailen Kids Studio Initialized!");
+function openWithdrawModal() {
+    alert("Retiro hacia Nequi / Billetera de ingresos abierto. Tasa: 1 USDT = 3200 COP.");
+}
+
+console.log("Streampulse Repository Updated Successfully!");

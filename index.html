@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Yailen Kids Studio - Producción de Reels Infantiles</title>
+    <title>Streampulse - Yailen Kids Studio & AutoReels</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,8 +14,8 @@
         <!-- Header -->
         <header class="app-header">
             <div class="header-title">
-                <h1>Yailen Studio</h1>
-                <span class="badge-vip">Kids AI PRO</span>
+                <h1>Streampulse</h1>
+                <span class="badge-vip">Yailen AI PRO</span>
             </div>
             <div class="header-icons">
                 <button aria-label="Notificaciones"><i class="fa-regular fa-bell"></i></button>
@@ -25,17 +25,17 @@
 
         <!-- Views Container -->
         <main class="app-body">
-            <!-- VIEW: INICIO / REELS -->
+            <!-- VIEW: REELS / INICIO -->
             <div id="view-inicio" class="app-view active">
                 <!-- Yailen Assistant Banner -->
                 <section class="yailen-banner">
                     <div class="yailen-avatar-wrap">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" alt="Yailen Avatar" class="yailen-avatar">
+                        <div class="yailen-avatar-letter">Y</div>
                         <span class="pulse-dot"></span>
                     </div>
                     <div class="yailen-speech">
                         <div class="speech-bubble">
-                            ¡Hola! Soy <strong>Yailen</strong> (4 años). Aquí creamos y organizamos nuestros reels educativos y canciones para <em>Wanketeros MEQUE KIDS</em>. ¡Cada capítulo terminado genera recompensas! 🌟
+                            ¡Hola! Soy <strong>Yailen</strong> (4 años). Aquí organizamos los capítulos de <em>APRENDE CON YAILEN</em> y <em>Wanketeros MEQUE KIDS</em>. ¡Cada capítulo terminado se paga en USDT/COP! 🌟
                         </div>
                     </div>
                 </section>
@@ -43,13 +43,13 @@
                 <!-- Earnings Card -->
                 <button class="profit-banner" onclick="switchTab('perfil')">
                     <div class="profit-left">
-                        <i class="fa-solid fa-coins"></i>
+                        <i class="fa-solid fa-wallet"></i>
                         <span>Ganancia por Capítulos Hoy</span>
                     </div>
                     <span class="profit-value">14.50 USDT <i class="fa-solid fa-chevron-right"></i></span>
                 </button>
 
-                <!-- Quick Stats -->
+                <!-- Stats Grid -->
                 <div class="stats-grid">
                     <div class="stat-card">
                         <i class="fa-solid fa-clapperboard stat-icon"></i>
@@ -71,33 +71,32 @@
                 <section class="section-block">
                     <div class="section-header-row">
                         <h2 class="section-title">Reels & Capítulos Activos 🎬</h2>
-                        <span class="see-more" onclick="alert('Nuevo proyecto IA abierto')">+ Crear Nuevo</span>
+                        <span class="see-more" onclick="alert('Iniciando renderizado IA automático...')">+ Nuevo Reel</span>
                     </div>
                     <div class="projects-list">
                         <div class="project-card">
-                            <div class="proj-thumb" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=300');">
+                            <div class="proj-thumb" style="background: linear-gradient(135deg, #FF8C00, #E67E00);">
                                 <span class="badge-format">9:16 Shorts</span>
                             </div>
                             <div class="proj-details">
-                                <h3>El Tren de los Colores con Yailen (Ep. 5)</h3>
-                                <p>Animación 3D Pixar, voz aguda infantil y subtítulos dinámicos en español.</p>
+                                <h3>El Tren de los Colores (Ep. 5)</h3>
+                                <p>Animación 3D Pixar, voz aguda infantil y subtítulos en español.</p>
                                 <div class="proj-progress">
                                     <div class="bar" style="width: 85%;"></div>
-                                    <span>85% Completado • 2.50 USDT</span>
+                                    <span>85% Renderizado • 2.50 USDT pagados</span>
                                 </div>
                             </div>
                         </div>
-
                         <div class="project-card">
-                            <div class="proj-thumb" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300');">
+                            <div class="proj-thumb" style="background: linear-gradient(135deg, #14B8A6, #0F766E);">
                                 <span class="badge-format">16:9 YouTube</span>
                             </div>
                             <div class="proj-details">
-                                <h3>Los Pollitos Dicen - Versión Educativa</h3>
-                                <p>Ronda infantil clásica con entornos coloridos del Río Magdalena.</p>
+                                <h3>Los Pollitos Dicen - Versión IA</h3>
+                                <p>Ronda clásica ambientada en el Río Magdalena.</p>
                                 <div class="proj-progress">
                                     <div class="bar" style="width: 100%; background: #22C55E;"></div>
-                                    <span style="color: #22C55E; font-weight: 600;">¡Completado! • 4.00 USDT</span>
+                                    <span style="color: #22C55E; font-weight: 600;">¡Capítulo Terminado! • 4.00 USDT</span>
                                 </div>
                             </div>
                         </div>
@@ -108,76 +107,74 @@
             <!-- VIEW: MATERIALES / GUIONES -->
             <div id="view-materiales" class="app-view">
                 <div class="view-header-flex">
-                    <h2>Materiales & Guiones IA</h2>
-                    <button class="history-btn" onclick="alert('Historial sincronizado')">Historial</button>
+                    <h2>Materiales & Guiones</h2>
+                    <button class="history-btn" onclick="alert('Sincronizado con GitHub Repo')">Sincronizar</button>
                 </div>
                 <div class="tip-banner">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i> Genera guiones automáticos con voz de Yailen en un solo toque.
+                    <i class="fa-solid fa-lightbulb"></i> Genera lotes automáticos de contenido infantil con voz de Yailen.
                 </div>
                 <div class="materials-grid">
                     <div class="mat-card">
                         <h3>Paquete Rimas 3D (30 Actividades)</h3>
-                        <p>Contenido enfocado en formas, números y vocabulario preescolar.</p>
+                        <p>Formas, números y vocabulario preescolar con Yailen.</p>
                         <div class="mat-footer">
-                            <span class="badge-income">Ingreso: 1.2 USDT / cap</span>
-                            <button class="mat-btn" onclick="alert('Generando lote de videos...')">Ejecutar Lote</button>
+                            <span class="badge-income">Pago por cap: 1.2 USDT</span>
+                            <button class="mat-btn" onclick="alert('Lote de guiones cargado con éxito')">Ejecutar</button>
                         </div>
                     </div>
                     <div class="mat-card">
-                        <h3>Cuentos Cortos del Río Magdalena</h3>
-                        <p>Aventuras ecológicas y educativas con personajes animados.</p>
+                        <h3>Cuentos Infantiles Interactivos</h3>
+                        <p>Historias cortas con moraleja y animación fluida.</p>
                         <div class="mat-footer">
-                            <span class="badge-income">Ingreso: 2.0 USDT / cap</span>
-                            <button class="mat-btn" onclick="alert('Generando lote de videos...')">Ejecutar Lote</button>
+                            <span class="badge-income">Pago por cap: 2.0 USDT</span>
+                            <button class="mat-btn" onclick="alert('Lote de guiones cargado con éxito')">Ejecutar</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- VIEW: INVERTIR / AUTOMATIZACIÓN -->
+            <!-- VIEW: AUTOREELS / AUTOMATIZACIÓN -->
             <div id="view-invertir" class="app-view">
                 <div class="view-header-flex">
-                    <h2>Automatización AutoReels</h2>
-                    <button class="history-btn">Configurar APIs</button>
+                    <h2>AutoReels Pipeline</h2>
+                    <button class="history-btn">Logs</button>
                 </div>
                 <div class="auto-banner">
-                    <h3>Motor de IA Activo</h3>
-                    <p>Python scripts conectados con Gemini Flash, ElevenLabs y Leonardo AI para renderizar lotes en automático.</p>
+                    <h3>Motor de IA Automatizado</h3>
+                    <p>Python scripts y Android Studio configurados para generar video, voz y subtítulos sin interrupciones.</p>
                 </div>
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-text">
-                            <span class="stat-label">Velocidad de Render</span>
+                            <span class="stat-label">Velocidad</span>
                             <span class="stat-count">4 Reels / hora</span>
                         </div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-text">
-                            <span class="stat-label">Estado de Cola</span>
-                            <span class="stat-count" style="color: #22C55E;">Sincronizado</span>
+                            <span class="stat-label">Estado</span>
+                            <span class="stat-count" style="color: #22C55E;">Operativo</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- VIEW: PERFIL -->
+            <!-- VIEW: PERFIL Y RETIROS (Nequi / COP / USDT) -->
             <div id="view-perfil" class="app-view">
                 <div class="profile-header-top">
                     <h2>Mi Cuenta</h2>
                     <div class="profile-actions-top">
                         <button aria-label="Notificaciones"><i class="fa-regular fa-bell"></i></button>
-                        <button aria-label="Ajustes"><i class="fa-solid fa-gear"></i></button>
+                        <button aria-label="Configuración"><i class="fa-solid fa-gear"></i></button>
                     </div>
                 </div>
 
                 <div class="profile-user-card">
-                    <div class="user-avatar-wrap">
-                        <span class="avatar-letter">W</span>
-                    </div>
+                    <div class="user-avatar-wrap">W</div>
                     <div class="user-meta">
                         <div class="user-name-row">
                             <span class="username">Wyler Noriega Ospino</span>
-                            <span class="vip-tag">CREATOR</span>
+                            <span class="vip-tag">PRODUCER</span>
                         </div>
                         <div class="uid-row">
                             <span>UID 5887807054 • Tamalameque, Colombia</span>
@@ -185,28 +182,37 @@
                     </div>
                 </div>
 
+                <!-- Wallet & Bank Card Binding (Nequi / Colombia COP) -->
                 <div class="wallet-section">
-                    <h3>Billetera de Ganancias por Reels</h3>
+                    <h3>Billetera de Ingresos por Capítulos</h3>
                     <div class="wallet-box">
                         <div class="w-top">
-                            <span>Saldo disponible para retiro (Nequi / USDT)</span>
-                            <span class="w-time">Lun-Dom 09:00-21:00</span>
+                            <span>Disponible (Nequi / Bancolombia / USDT)</span>
+                            <span class="w-time">Tasa: 1 USDT = 3200 COP</span>
                         </div>
                         <div class="w-content">
                             <div>
                                 <div class="w-amount">48.50 USDT</div>
-                                <div class="w-sub">≈ 155,200 COP (Tasa 3200)</div>
+                                <div class="w-sub">≈ 155,200 COP</div>
                             </div>
-                            <button class="w-btn primary" onclick="alert('Solicitud de retiro enviada a Nequi')">Retirar</button>
+                            <button class="w-btn primary" onclick="openWithdrawModal()">Retirar</button>
                         </div>
                     </div>
                 </div>
 
+                <!-- Withdrawal Card simulation / Bank Info -->
+                <div class="bank-card-box" id="bankBox">
+                    <h4><i class="fa-solid fa-building-columns"></i> Cuenta de Cobro Vinculada</h4>
+                    <p><strong>País:</strong> Colombia COP</p>
+                    <p><strong>Método:</strong> NEQUI (****8721)</p>
+                    <button class="w-btn secondary" style="margin-top:8px; width:100%;" onclick="alert('Cuenta Nequi verificada correctamente')">Gestionar Cuenta</button>
+                </div>
+
                 <div class="services-section">
-                    <h3>Canales Oficiales Vinculados</h3>
+                    <h3>Canales YouTube & Redes</h3>
                     <div class="service-list">
-                        <div class="service-item"><i class="fa-brands fa-youtube" style="color: #EF4444;"></i><span>APRENDE CON YAILEN</span><span style="margin-left:auto; color: #22C55E; font-size:12px;">Activo</span></div>
-                        <div class="service-item"><i class="fa-brands fa-facebook" style="color: #3B82F6;"></i><span>Wanketeros MEQUE KIDS</span><span style="margin-left:auto; color: #22C55E; font-size:12px;">Activo</span></div>
+                        <div class="service-item"><i class="fa-brands fa-youtube" style="color: #EF4444;"></i><span>APRENDE CON YAILEN</span><span style="margin-left:auto; color: #22C55E;">Vinculado</span></div>
+                        <div class="service-item"><i class="fa-brands fa-facebook" style="color: #3B82F6;"></i><span>Wanketeros MEQUE KIDS</span><span style="margin-left:auto; color: #22C55E;">Vinculado</span></div>
                     </div>
                 </div>
             </div>
