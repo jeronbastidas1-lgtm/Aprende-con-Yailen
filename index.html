@@ -1,283 +1,202 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Streampulse - Studio & Reproductor de Reels</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+    <title>Streampulse & Yailen TV · Studio y Videos Cortos IA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
     <div class="app-container">
         <!-- Header -->
         <header class="app-header">
-            <div class="header-title">
-                <h1>Streampulse</h1>
-                <span class="badge-vip">Yailen AI PRO</span>
-            </div>
-            <div class="header-icons">
-                <button aria-label="Notificaciones" onclick="alert('Sin notificaciones nuevas')"><i class="fa-regular fa-bell"></i></button>
-                <button aria-label="Configuración" onclick="switchTab('perfil')"><i class="fa-solid fa-gear"></i></button>
-            </div>
+            <div class="logo" aria-hidden="true">🌈</div>
+            <h1>Streampulse & Yailen TV</h1>
+            <div class="chip-st" id="stTop" aria-label="Estrellas">⭐ 0</div>
         </header>
 
-        <!-- Views Container -->
+        <!-- Main Views Container -->
         <main class="app-body">
-            <!-- VIEW: REELS / INICIO & REPRODUCTOR -->
+            <!-- VIEW 1: INICIO / Yailen TV Reels -->
             <div id="view-inicio" class="app-view active">
-                <!-- Yailen Assistant Banner -->
-                <section class="yailen-banner">
-                    <div class="yailen-avatar-wrap">
-                        <div class="yailen-avatar-letter">Y</div>
-                        <span class="pulse-dot"></span>
-                    </div>
-                    <div class="yailen-speech">
-                        <div class="speech-bubble">
-                            ¡Hola! Soy <strong>Yailen</strong> (4 años). Aquí puedes reproducir tus reels educativos y capítulos de prueba sin interrupciones de servidor. 🌟
-                        </div>
-                    </div>
+                <section class="hero">
+                    <span class="em" aria-hidden="true">⭐</span>
+                    <h2>APRENDE CON YAILEN</h2>
+                    <p>Videos cortos, rimas y animación 3D inteligente en español.</p>
+                    <button class="btn" data-open="1">▶ Ver Episodio 1</button>
                 </section>
 
-                <!-- Earnings Card -->
+                <!-- Earnings Banner linking to Profile / Wallet -->
                 <button class="profit-banner" onclick="switchTab('perfil')">
                     <div class="profit-left">
                         <i class="fa-solid fa-wallet"></i>
-                        <span>Ganancia por Capítulos Hoy</span>
+                        <span>Billetera de Ganancias (USDT/COP)</span>
                     </div>
-                    <span class="profit-value">14.50 USDT <i class="fa-solid fa-chevron-right"></i></span>
+                    <span class="profit-value">48.50 USDT <i class="fa-solid fa-chevron-right"></i></span>
                 </button>
 
-                <!-- Stats Grid -->
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <i class="fa-solid fa-clapperboard stat-icon"></i>
-                        <div>
-                            <span class="stat-label">Reels Terminados</span>
-                            <span class="stat-count">12 <em>Capítulos</em></span>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fa-solid fa-star stat-icon pink"></i>
-                        <div>
-                            <span class="stat-label">Reproducciones</span>
-                            <span class="stat-count">45.2K <em>Vistas</em></span>
-                        </div>
-                    </div>
+                <div class="chips" role="group" aria-label="Categorías" id="catChips">
+                    <button data-cat="Todo" aria-pressed="true">Todo</button>
+                    <button data-cat="Canciones" aria-pressed="false">Canciones</button>
+                    <button data-cat="Aprendo" aria-pressed="false">Aprendo</button>
+                    <button data-cat="Rutinas" aria-pressed="false">Rutinas</button>
+                    <button data-cat="Cuentos" aria-pressed="false">Cuentos</button>
                 </div>
 
-                <!-- Video Player Simulator Section -->
-                <section class="section-block">
-                    <div class="section-header-row">
-                        <h2 class="section-title">Reproductor de Reels 🎬</h2>
-                        <span class="see-more" onclick="openPlayerModal()">Ver Episodios</span>
-                    </div>
-                    <div class="video-preview-card" onclick="openPlayerModal()">
-                        <div class="video-thumb-bg" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500');">
-                            <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
-                            <span class="badge-format">Episodio 01 • Estable</span>
-                        </div>
-                        <div class="video-meta-info">
-                            <h3>Yailen Kids & Reels Preview</h3>
-                            <p>Reproducción de video directa con streaming abierto y sin errores 401.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Active Projects List -->
-                <section class="section-block">
-                    <div class="section-header-row">
-                        <h2 class="section-title">Capítulos Activos</h2>
-                        <span class="see-more" onclick="alert('Iniciando renderizado IA automático...')">+ Nuevo Reel</span>
-                    </div>
-                    <div class="projects-list">
-                        <div class="project-card">
-                            <div class="proj-thumb" style="background: linear-gradient(135deg, #FF8C00, #E67E00);">
-                                <span class="badge-format">9:16 Shorts</span>
-                            </div>
-                            <div class="proj-details">
-                                <h3>El Tren de los Colores (Ep. 5)</h3>
-                                <p>Animación 3D Pixar, voz aguda infantil y subtítulos en español.</p>
-                                <div class="proj-progress">
-                                    <div class="bar" style="width: 85%;"></div>
-                                    <span>85% Renderizado • 2.50 USDT pagados</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <div class="proj-thumb" style="background: linear-gradient(135deg, #14B8A6, #0F766E);">
-                                <span class="badge-format">16:9 YouTube</span>
-                            </div>
-                            <div class="proj-details">
-                                <h3>Los Pollitos Dicen - Versión IA</h3>
-                                <p>Ronda clásica ambientada en el Río Magdalena.</p>
-                                <div class="proj-progress">
-                                    <div class="bar" style="width: 100%; background: #22C55E;"></div>
-                                    <span style="color: #22C55E; font-weight: 600;">¡Capítulo Terminado! • 4.00 USDT</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <div class="sec">Catálogo de Capítulos</div>
+                <div class="grid" id="homeGrid"></div>
             </div>
 
-            <!-- VIEW: MATERIALES / GUIONES -->
+            <!-- VIEW 2: MATERIALES / TIENDA DE GUIONES -->
             <div id="view-materiales" class="app-view">
                 <div class="view-header-flex">
-                    <h2>Materiales & Guiones</h2>
-                    <button class="history-btn" onclick="alert('Sincronizado con GitHub Repo')">Sincronizar</button>
+                    <h2>Materiales & Guiones IA</h2>
+                    <button class="history-btn" onclick="alert('Sincronizado con GitHub')">Historial</button>
                 </div>
                 <div class="tip-banner">
-                    <i class="fa-solid fa-lightbulb"></i> Genera lotes automáticos de contenido infantil con voz de Yailen.
+                    <i class="fa-solid fa-lightbulb"></i> Puedes comprar o ejecutar varios paquetes de material a la vez para tus canales.
                 </div>
-                <div class="materials-grid">
-                    <div class="mat-card">
-                        <h3>Paquete Rimas 3D (30 Actividades)</h3>
-                        <p>Formas, números y vocabulario preescolar con Yailen.</p>
-                        <div class="mat-footer">
-                            <span class="badge-income">Pago por cap: 1.2 USDT</span>
-                            <button class="mat-btn" onclick="alert('Lote de guiones cargado con éxito')">Ejecutar</button>
+                <div class="materials-list">
+                    <div class="material-card-item">
+                        <div class="mat-title-row">
+                            <h3>Guion de Reserva (3 Días)</h3>
+                            <span class="badge-income">0.9 - 1.8 USDT/día</span>
                         </div>
+                        <p><i class="fa-solid fa-clapperboard"></i> Clips diarios: 3 • Contrato activo</p>
+                        <button class="mat-action-btn sold-out" disabled>Límite Alcanzado</button>
                     </div>
-                    <div class="mat-card">
-                        <h3>Cuentos Infantiles Interactivos</h3>
-                        <p>Historias cortas con moraleja y animación fluida.</p>
-                        <div class="mat-footer">
-                            <span class="badge-income">Pago por cap: 2.0 USDT</span>
-                            <button class="mat-btn" onclick="alert('Lote de guiones cargado con éxito')">Ejecutar</button>
+                    <div class="material-card-item">
+                        <div class="mat-title-row">
+                            <h3>Paquete Rimas 3D con Yailen</h3>
+                            <span class="badge-income">1.2 USDT / capítulo</span>
                         </div>
+                        <p><i class="fa-solid fa-wand-magic-sparkles"></i> Actividades de formas, números y vocabulario preescolar.</p>
+                        <button class="mat-action-btn buy" onclick="alert('Lote de rimas 3D en proceso de renderizado IA')">Ejecutar Lote (32 USDT)</button>
                     </div>
                 </div>
             </div>
 
-            <!-- VIEW: AUTOREELS / AUTOMATIZACIÓN -->
+            <!-- VIEW 3: INVERTIR / AUTOMATIZACIÓN AUTOREELS -->
             <div id="view-invertir" class="app-view">
                 <div class="view-header-flex">
-                    <h2>AutoReels Pipeline</h2>
-                    <button class="history-btn">Logs</button>
+                    <h2>AutoReels & Inversión IA</h2>
+                    <button class="history-btn">Registros</button>
                 </div>
                 <div class="auto-banner">
-                    <h3>Motor de IA Automatizado</h3>
-                    <p>Python scripts y Android Studio configurados para generar video, voz y subtítulos sin interrupciones.</p>
+                    <h3>Inversión en Contenido Original con IA</h3>
+                    <p>Conectado con Gemini Flash, ElevenLabs y Leonardo AI en Python para generar series automáticas.</p>
                 </div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-text">
-                            <span class="stat-label">Velocidad</span>
-                            <span class="stat-count">4 Reels / hora</span>
+                <div class="investment-list">
+                    <div class="invest-card">
+                        <div class="invest-top">
+                            <div class="invest-cover">El Maíz Sagrado</div>
+                            <div class="invest-body">
+                                <h3>El Maíz Sagrado Contra el Imperio</h3>
+                                <span class="maturity-badge">Vencimiento 14 días</span>
+                                <ul class="invest-facts">
+                                    <li>Rendimiento: <strong class="accent">0.2% ~ 0.5%/día</strong></li>
+                                    <li>Límite: 10 ~ 400 USDT</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-text">
-                            <span class="stat-label">Estado</span>
-                            <span class="stat-count" style="color: #22C55E;">Operativo</span>
+                        <div class="invest-actions">
+                            <button class="btn-detail" onclick="alert('Detalles del contrato inteligente')">Detalles</button>
+                            <button class="btn-buy-blocked">Activo en red</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- VIEW: PERFIL Y RETIROS (Nequi / COP / USDT) -->
+            <!-- VIEW 4: PERFIL Y BILLETERA (Nequi / COP / USDT) -->
             <div id="view-perfil" class="app-view">
-                <div class="profile-header-top">
-                    <h2>Mi Cuenta</h2>
-                    <div class="profile-actions-top">
-                        <button aria-label="Notificaciones"><i class="fa-regular fa-bell"></i></button>
-                        <button aria-label="Configuración"><i class="fa-solid fa-gear"></i></button>
-                    </div>
-                </div>
-
-                <div class="profile-user-card">
-                    <div class="user-avatar-wrap">W</div>
-                    <div class="user-meta">
-                        <div class="user-name-row">
-                            <span class="username">Wyler Noriega Ospino</span>
-                            <span class="vip-tag">PRODUCER</span>
-                        </div>
-                        <div class="uid-row">
-                            <span>UID 5887807054 • Tamalameque, Colombia</span>
+                <div class="prof">
+                    <div class="row">
+                        <div class="av">🧒</div>
+                        <div>
+                            <b>Wyler Noriega (Yailen Creator)</b><br>
+                            <small>UID 5887807054 · Tamalameque, Colombia</small>
                         </div>
                     </div>
+                    <small style="display:block;margin-top:12px">Estrellas acumuladas en Yailen TV</small>
+                    <div class="big">⭐ <em id="starCount">0</em></div>
                 </div>
 
-                <!-- Wallet & Bank Card Binding -->
+                <div class="two">
+                    <div><b>12</b><span>Reels Vistos</span></div>
+                    <div><b>48.5</b><span>USDT Balance</span></div>
+                </div>
+
                 <div class="wallet-section">
-                    <h3>Billetera de Ingresos por Capítulos</h3>
-                    <div class="wallet-box">
-                        <div class="w-top">
-                            <span>Disponible (Nequi / Bancolombia / USDT)</span>
-                            <span class="w-time">Tasa: 1 USDT = 3200 COP</span>
+                    <div class="sec" style="padding:0 0 8px 0">Billetera de Ingresos</div>
+                    <div class="wallet-box" style="background:var(--sf); border:1px solid var(--bd); border-radius:14px; padding:16px;">
+                        <div class="w-top" style="display:flex; justify-content:space-between; font-size:12px; color:var(--tx2); margin-bottom:8px;">
+                            <span>Retiro Fíat (Colombia COP / Nequi)</span>
+                            <span>1 USDT = 3200 COP</span>
                         </div>
-                        <div class="w-content">
+                        <div class="w-content" style="display:flex; justify-content:space-between; align-items:center;">
                             <div>
-                                <div class="w-amount">48.50 USDT</div>
-                                <div class="w-sub">≈ 155,200 COP</div>
+                                <div class="w-amount" style="font-size:20px; font-weight:700">48.50 USDT</div>
+                                <div class="w-sub" style="font-size:11px; color:var(--tx2)">≈ 155,200 COP (Comisión 7%)</div>
                             </div>
-                            <button class="w-btn primary" onclick="openWithdrawModal()">Retirar</button>
+                            <button class="btn" onclick="openWithdrawModal()" style="padding:8px 14px">Retirar</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Withdrawal Card simulation -->
-                <div class="bank-card-box" id="bankBox">
-                    <h4><i class="fa-solid fa-building-columns"></i> Cuenta de Cobro Vinculada</h4>
+                <div class="bank-card-box" style="background:var(--sf); border:1px solid var(--bd); border-radius:14px; padding:14px; font-size:13px; margin-top:10px;">
+                    <h4 style="color:var(--pr); margin-bottom:4px"><i class="fa-solid fa-building-columns"></i> Cuenta Nequi Vinculada</h4>
                     <p><strong>País:</strong> Colombia COP</p>
                     <p><strong>Método:</strong> NEQUI (****8721)</p>
-                    <button class="w-btn secondary" style="margin-top:8px; width:100%;" onclick="alert('Cuenta Nequi verificada correctamente')">Gestionar Cuenta</button>
                 </div>
 
-                <div class="services-section">
-                    <h3>Canales YouTube & Redes</h3>
-                    <div class="service-list">
-                        <div class="service-item"><i class="fa-brands fa-youtube" style="color: #EF4444;"></i><span>APRENDE CON YAILEN</span><span style="margin-left:auto; color: #22C55E;">Vinculado</span></div>
-                        <div class="service-item"><i class="fa-brands fa-facebook" style="color: #3B82F6;"></i><span>Wanketeros MEQUE KIDS</span><span style="margin-left:auto; color: #22C55E;">Vinculado</span></div>
-                    </div>
+                <div class="sec" style="margin-top:14px">Servicios y Canales</div>
+                <div class="svc">
+                    <button data-svc="goals"><i>🏆</i><b>Centro de Retos e Insignias</b><u>›</u></button>
+                    <button data-svc="done"><i>🎬</i><b>Episodios Completados</b><u>›</u></button>
+                    <button data-svc="share"><i>👫</i><b>Invitar Creadores</b><u>›</u></button>
+                    <button data-svc="news"><i>📣</i><b>Novedades de Wanketeros MEQUE KIDS</b><u>›</u></button>
                 </div>
             </div>
         </main>
 
-        <!-- Bottom Navigation -->
-        <nav class="bottom-nav">
-            <button class="nav-tab active" onclick="switchTab('inicio')">
-                <i class="fa-solid fa-clapperboard"></i><span>Reels</span>
-            </button>
-            <button class="nav-tab" onclick="switchTab('materiales')">
-                <i class="fa-solid fa-book-open"></i><span>Guiones</span>
-            </button>
-            <button class="nav-tab" onclick="switchTab('invertir')">
-                <i class="fa-solid fa-robot"></i><span>Auto IA</span>
-            </button>
-            <button class="nav-tab" onclick="switchTab('perfil')">
-                <i class="fa-solid fa-user"></i><span>Perfil</span>
-            </button>
+        <!-- Bottom Navigation Bar -->
+        <nav role="tablist" aria-label="Secciones">
+            <button role="tab" data-t="home" aria-selected="true"><span>🏠</span>Inicio</button>
+            <button role="tab" data-t="materiales" aria-selected="false"><span>📦</span>Materiales</button>
+            <button role="tab" data-t="invertir" aria-selected="false"><span>🤖</span>Auto IA</button>
+            <button role="tab" data-t="perfil" aria-selected="false"><span>🙂</span>Yo</button>
         </nav>
     </div>
 
-    <!-- Video Player Modal with Stable Demo Sources -->
-    <div id="playerModal" class="player-modal">
-        <div class="player-modal-content">
-            <div class="player-top-bar">
-                <button onclick="closePlayerModal()"><i class="fa-solid fa-arrow-left"></i></button>
-                <span id="playerTitle">Episodio 01 - Yailen Studio</span>
-            </div>
-            <div class="player-video-container">
-                <video id="sampleVideo" controls autoplay playsinline></video>
-            </div>
-            <div class="episodes-selector-bar">
-                <h4>Seleccionar Episodio</h4>
-                <div class="episodes-chips-grid">
-                    <button class="ep-chip active" onclick="selectEp(1)">1</button>
-                    <button class="ep-chip" onclick="selectEp(2)">2</button>
-                    <button class="ep-chip" onclick="selectEp(3)">3</button>
-                    <button class="ep-chip" onclick="selectEp(4)">4</button>
-                    <button class="ep-chip" onclick="selectEp(5)">5</button>
-                    <button class="ep-chip" onclick="selectEp(6)">6</button>
-                    <button class="ep-chip" onclick="selectEp(7)">7</button>
-                    <button class="ep-chip" onclick="selectEp(8)">8</button>
-                </div>
-            </div>
+    <!-- Yailen TV Player Modal -->
+    <section class="pl" id="pl" role="dialog" aria-modal="true" aria-label="Reproductor">
+        <button class="x" id="close" aria-label="Cerrar">✕</button>
+        <div class="screen" id="scr">
+            <div class="stage" id="stage"></div>
+            <button class="play" id="play">▶ Ver</button>
         </div>
-    </div>
+        <div class="bar" aria-hidden="true"><div id="prog"></div></div>
+        <div class="meta">
+            <h2 id="plT"></h2>
+            <button class="chip-st" id="plFav" aria-label="Favorito">🤍</button>
+        </div>
+        <p style="padding:0 16px 12px;color:var(--tx2)" id="plD"></p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;padding:0 16px 12px">
+            <button class="chip-st" id="pBtn">📝 Prompt del episodio</button>
+            <label class="chip-st" style="cursor:pointer">🎬 Subir mi video<input type="file" accept="video/*" id="vf" style="position:absolute;opacity:0;width:1px;height:1px"></label>
+        </div>
+        <div id="pp" style="display:none;padding:0 16px 14px">
+            <textarea id="pt" readonly rows="12" aria-label="Prompt del episodio" style="width:100%;background:var(--sf);color:var(--tx);border:1px solid var(--bd);border-radius:12px;padding:10px;font:13px/1.4 inherit"></textarea>
+            <button class="btn" id="pCopy" style="margin-top:8px">Copiar prompt</button>
+        </div>
+        <div class="sec">Episodios</div>
+        <div class="eps" id="eps"></div>
+    </section>
+
+    <div class="toast" id="toast" role="status"></div>
 
     <script src="app.js"></script>
 </body>
